@@ -28,6 +28,11 @@ android {
     buildFeatures {
         dataBinding true
     }
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
 }
 
 dependencies {
