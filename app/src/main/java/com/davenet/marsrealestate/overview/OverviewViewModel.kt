@@ -24,8 +24,11 @@ class OverviewViewModel : ViewModel() {
     private val _response = MutableLiveData<String>()
 
     // The external immutable LiveData for the response String
-    val response: LiveData<String>
-        get() = _response
+    val response: LiveData<String> get() = _response
+
+    private val _properties = MutableLiveData<List<MarsProperty>>()
+
+    val properties: LiveData<List<MarsProperty>> get() = _properties
 
     private var viewModelJob = Job()
 
@@ -47,6 +50,7 @@ class OverviewViewModel : ViewModel() {
             try {
                 var listResult = getPropertiesDeferred.await()
                 _response.value = "Success: ${listResult.size} Mars properties retrieved"
+                    _properties.value = listResult
             } catch (e: Exception) {
                 _response.value = "Failure: ${e.message}"
             }

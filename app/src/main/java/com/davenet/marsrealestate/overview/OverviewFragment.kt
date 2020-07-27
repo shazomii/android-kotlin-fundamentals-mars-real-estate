@@ -6,6 +6,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.davenet.marsrealestate.R
+import com.davenet.marsrealestate.databinding.GridViewItemBinding
 import com.davenet.marsrealestate.databinding.OverviewFragmentBinding
 
 /**
@@ -28,10 +29,24 @@ class OverviewFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = OverviewFragmentBinding.inflate(inflater)
 
-        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+        binding.apply {
+            // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+            lifecycleOwner = this@OverviewFragment
+
+            // Giving the binding access to the OverviewViewModel
+            viewModel = viewModel
+
+            // Initialize recycler view adapter to a new PhotoGridAdapter object
+            photosGrid.adapter = PhotoGridAdapter()
+
+
+        }
+
+
+
         binding.lifecycleOwner = this
 
-        // Giving the binding access to the OverviewViewModel
+
         binding.viewModel = viewModel
 
         setHasOptionsMenu(true)
