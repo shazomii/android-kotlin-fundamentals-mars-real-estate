@@ -11,7 +11,7 @@ import com.davenet.marsrealestate.overview.PhotoGridAdapter
 
 @BindingAdapter("imageUrl")
 fun bindingImage(imgView: ImageView, imgUrl: String?) {
-        imgUrl?.let {
+    imgUrl?.let {
         val imgUri = imgUrl.toUri().buildUpon().scheme("https").build()
         GlideApp.with(imgView.context)
             .load(imgUri)

@@ -9,7 +9,7 @@
         android:id="@+id/overviewFragment"
         android:name="com.davenet.marsrealestate.overview.OverviewFragment"
         android:label="fragment_overview"
-        tools:layout="@layout/overview_fragment" >
+        tools:layout="@layout/overview_fragment">
         <action
             android:id="@+id/action_showDetail"
             app:destination="@id/detailFragment" />
@@ -20,6 +20,9 @@
         android:name="com.davenet.marsrealestate.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/detail_fragment">
+        <argument
+            android:name="selectedProperty"
+            app:argType="com.davenet.marsrealestate.network.MarsProperty" />
     </fragment>
 
 </navigation>
