@@ -41,7 +41,7 @@ class OverviewFragment : Fragment() {
 
             // Initialize recycler view adapter to a new PhotoGridAdapter object
             photosGrid.adapter = PhotoGridAdapter(PhotoGridAdapter.OnClickListener {
-                viewModel?.displayPropertyDetails(it)
+                viewModel.displayPropertyDetails(it)
             })
         }
         viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
