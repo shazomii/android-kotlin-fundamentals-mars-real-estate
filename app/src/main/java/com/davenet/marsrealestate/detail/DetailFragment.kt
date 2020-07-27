@@ -1,12 +1,10 @@
 package com.davenet.marsrealestate.detail
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.davenet.marsrealestate.R
+import androidx.fragment.app.Fragment
 import com.davenet.marsrealestate.databinding.DetailFragmentBinding
 
 /**
